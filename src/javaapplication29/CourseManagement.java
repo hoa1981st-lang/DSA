@@ -73,34 +73,43 @@ public class CourseManagement {
                     System.out.print("Mã KH tìm tuyến tính: ");
                     System.out.println(list.searchLinear(sc.nextLine()));
                     break;
-
                 case 5:
+                    System.out.print("Mã KH tìm nhị phân: ");
+                    String maBS = sc.nextLine();
+                    Course kq = list.binarySearchByMa(maBS);
+                    if (kq != null) {
+                        System.out.println(kq);
+                    } else {
+                        System.out.println("Không tìm thấy!");
+                    }
+                    break;
+                case 6:
                     System.out.print("Mã KH tìm BST: ");
                     Course res = bst.search(sc.nextLine());
                     System.out.println(res != null ? res : "Không tìm thấy");
                     break;
-                case 6: 
+                case 7: 
                     list.bubbleSortByPrice(); 
                     bst.rebuildFromList(list);
                     System.out.println("Sắp xếp nổi bọt xong!");
                     break ; 
-                case 7: 
+                case 8: 
                     list.selectionSortByPrice();
                     bst.rebuildFromList(list); 
                     System.out.println("Sắp xếp lựa chọn xong!");
                     break ; 
-                case 8:
+                case 9:
                     list.insertionSortByPrice(); 
                     bst.rebuildFromList(list);
                     System.out.println("Sắp xếp chèn xong!");
                     break ;
-                case 9:
+                case 10:
                     list.printAll(); 
                     break ;
-                case 10:
+                case 11:
                     bst.inorder(); 
                     break ;
-                case 11: 
+                case 12: 
                     System.out.println("Mã KH thêm queue: ");
                     Course qc = list.searchLinear(sc.nextLine()); 
                     if(qc != null){
@@ -110,14 +119,14 @@ public class CourseManagement {
                         System.out.println("Không tìm thấy!");
                     }
                     break ; 
-                case 12:
+                case 13:
                     if(!pendingQueue.isEmpty()){
                         System.out.println("Xử lý: " + pendingQueue.poll());
                     }else{
                         System.out.println("Queue trống!");
                     }
                     break ; 
-                case 13: 
+                case 14: 
                     if(!historyStack.isEmpty()){
                         System.out.println("Last: "+ historyStack.pop());
                     }else{
@@ -139,15 +148,16 @@ public class CourseManagement {
         System.out.println("2. Xóa khóa học");
         System.out.println("3. Sửa khóa học");
         System.out.println("4. Tìm kiếm tuyến tính");
-        System.out.println("5. Tìm kiếm BST");
-        System.out.println("6. Sắp xếp nổi bọt theo giá");
-        System.out.println("7. Sắp xếp lựa chọn theo giá");
-        System.out.println("8. Sắp xếp chèn theo giá");
-        System.out.println("9. Hiển thị danh sách LinkedList");
-        System.out.println("10. Hiển thị BST");
-        System.out.println("11. Thêm vào Queue chờ");
-        System.out.println("12. Xử lý Queue");
-        System.out.println("13. Xem lịch sử");
+        System.out.println("5. Tìm kiếm nhị phân theo mã");
+        System.out.println("6. Tìm kiếm BST");
+        System.out.println("7. Sắp xếp nổi bọt theo giá");
+        System.out.println("8. Sắp xếp lựa chọn theo giá");
+        System.out.println("9. Sắp xếp chèn theo giá");
+        System.out.println("10. Hiển thị danh sách LinkedList");
+        System.out.println("11. Hiển thị BST");
+        System.out.println("12. Thêm vào Queue chờ");
+        System.out.println("13. Xử lý Queue");
+        System.out.println("14. Xem lịch sử");
         System.out.println("0. Thoát");
         System.out.print("Nhập lựa chọn: ");
     }
