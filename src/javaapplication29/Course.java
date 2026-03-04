@@ -8,7 +8,7 @@ package javaapplication29;
  *
  * @author KhanhNguyen9872
  */
-public class Course {
+public class Course implements Comparable<Course> {
     private String maKhoaHoc ; 
     private String loai ; 
     private double gia ; 
@@ -34,9 +34,12 @@ public class Course {
     public void setGia(double gia){
         this.gia = gia ;
     }
+    
+    @Override 
     public int compareTo(Course other){
         return this.maKhoaHoc.compareTo(other.maKhoaHoc); 
     }
+    
     @Override 
     public String toString(){
         return String.format("Mã: %s | Loại: %s | Gía: %.0f", maKhoaHoc , loai , gia); 
